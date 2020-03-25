@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryNetCore\ClassLibraryNetCore.csproj" />
+    <ProjectReference Include="..\EFCodeFirst\EFCodeFirst.csproj" />
   </ItemGroup>
 
 </Project>
