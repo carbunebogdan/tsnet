@@ -58,7 +58,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="PostCommentContract.cs" />
-    <Compile Include="PostCommentService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proxy.cs" />
