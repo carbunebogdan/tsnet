@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+option csharp_namespace = "gRPC_si_EF_SERVICIU";
+
+package PostCRUD;
+
+service CommentCRUD {
+  rpc SelectAll (Empty) returns (Comments);
+  rpc SelectByID (PostFilter) returns (Post);
+  rpc Insert (Post) returns (Empty);
+  rpc Update (Post) returns (Empty);
+  rpc Delete (PostFilter) returns (Empty);
+}
+
+message Empty {
+
+}
+
+message Post {
+  int PostId = 1;
+  string Description = 2;
+  string Domain = 3;
+  string Date = 4;
+}
+
+message Posts {
+   repeated Post items = 1;
+}
+
+message PostFilter {
+   int PostId = 1;
+}
