@@ -9,7 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\PostComment.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gRPC_si_EF_DATA\gRPC_si_EF_DATA.csproj" />
   </ItemGroup>
 
 </Project>

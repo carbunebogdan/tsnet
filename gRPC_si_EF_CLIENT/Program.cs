@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Net.Http;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using gRPC_si_EF_SERVICIU;
-using Grpc.Net.Client;
+using System.Windows.Forms;
 
 namespace gRPC_si_EF_CLIENT
 {
-    class Program
+    static class Program
     {
-        static async Task Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            // The port number(5001) must match the port of the gRPC server.
-            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new Greeter.GreeterClient(channel);
-            var reply = await client.SayHelloAsync(
-            new HelloRequest { Name = "GreeterClient" });
-            Console.WriteLine("Greeting: " + reply.Message);
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
-
 }

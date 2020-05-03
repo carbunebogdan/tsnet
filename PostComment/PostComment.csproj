@@ -57,6 +57,8 @@
     <Compile Include="Comment.cs">
       <DependentUpon>ModelPostComment.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Post.cs" />
     <Compile Include="ModelPostComment.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPostComment.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ModelReference.cs" />
     <Compile Include="Post.cs">
       <DependentUpon>ModelPostComment.tt</DependentUpon>
     </Compile>
