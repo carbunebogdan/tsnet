@@ -1,0 +1,58 @@
+﻿syntax = "proto3";
+option csharp_namespace = "gRPC_si_EF_SERVICIU";
+
+package PostComment;
+
+service PostComment {
+  rpc AddComment (Comment) returns (BoolResult);
+  rpc AddPost (Post) returns (BoolResult);
+  rpc DeletePost (PostFilter) returns (IntResult);
+  rpc GetCommentById (CommentFilter) returns (Comment);
+  rpc GetPostById (PostFilter) returns (Post);
+  rpc GetPosts (Empty) returns (Posts);
+  rpc UpdateComment (Comment) returns (Comment);
+  rpc UpdatePost (Post) returns (Post);
+}
+
+message BoolResult {
+    bool result = 1;
+}
+
+message IntResult {
+    int32 result = 1;
+}
+
+message Empty {
+
+}
+
+message Post {
+	string PostId = 1;
+	string Description = 2;
+	string Domain = 3;
+	string Date = 4;
+	repeated Comment Comments = 5;
+}
+
+message Posts {
+   repeated Post items = 1;
+}
+
+message PostFilter {
+   string PostId = 1;
+}
+
+message Comment {
+	string CommentId = 1;
+	string Text = 2;
+	string PostPostId = 3;
+	Post Post = 4;
+}
+
+message Comments {
+   repeated Comment items = 1;
+}
+
+message CommentFilter {
+   string CommentId = 1;
+}

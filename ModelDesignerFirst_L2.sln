@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPC_si_EF_DATA", "gRPC_si_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_si_EF_CLIENT", "gRPC_si_EF_CLIENT\gRPC_si_EF_CLIENT.csproj", "{76500D73-1272-46CC-864E-BC33FE5090E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_Carbune_Vasile_Bogdan_Rp", "Asp_Carbune_Vasile_Bogdan_Rp\Asp_Carbune_Vasile_Bogdan_Rp.csproj", "{CA970A8B-0F4C-4E03-B66F-C2E26FDC2536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{76500D73-1272-46CC-864E-BC33FE5090E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76500D73-1272-46CC-864E-BC33FE5090E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76500D73-1272-46CC-864E-BC33FE5090E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA970A8B-0F4C-4E03-B66F-C2E26FDC2536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA970A8B-0F4C-4E03-B66F-C2E26FDC2536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA970A8B-0F4C-4E03-B66F-C2E26FDC2536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA970A8B-0F4C-4E03-B66F-C2E26FDC2536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
