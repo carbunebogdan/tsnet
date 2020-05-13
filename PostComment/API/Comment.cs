@@ -7,47 +7,44 @@ namespace PostComment
     {
         public bool AddComment()
         {
-            using (ModelPostCommentContainer ctx = new ModelPostCommentContainer())
+            using (ModelPostCommentContainer context = new ModelPostCommentContainer())
             {
-                bool bResult = false;
                 if (this == null || this.PostPostId == 0)
-                    return bResult;
+                    return false;
                 if (this.CommentId == 0)
                 {
-                    ctx.Entry<Comment>(this).State = EntityState.Added;
-                    Post p = ctx.Posts.Find(this.PostPostId);
-                    ctx.Entry<Post>(p).State = EntityState.Unchanged;
-                    ctx.SaveChanges();
-                    bResult = true;
+                    context.Entry<Comment>(this).State = EntityState.Added;
+                    Post p = context.Posts.Find(this.PostPostId);
+                    context.Entry<Post>(p).State = EntityState.Unchanged;
+                    context.SaveChanges();
+                    return true;
                 }
-                return bResult;
+                return false;
             }
         }
+
         public Comment UpdateComment(Comment newComment)
         {
-            using (ModelPostCommentContainer ctx = new ModelPostCommentContainer())
+            using (ModelPostCommentContainer context = new ModelPostCommentContainer())
             {
-                Comment oldComment = ctx.Comments.Find(newComment.CommentId);
-                // Deoarece parametrul este un Comment ar trebui verificata fiecare
-                // proprietate din newComment daca are valoare atribuita si
-                // daca valoarea este diferita de cea din bd.
-                // Acest lucru il fac numai la modificarea asocierii.
+                Comment comment = context.Comments.Find(newComment.CommentId);
+
                 if (newComment.Text != null)
-                    oldComment.Text = newComment.Text;
-                if ((oldComment.PostPostId != newComment.PostPostId)
-               && (newComment.PostPostId != 0))
-                {
-                    oldComment.PostPostId = newComment.PostPostId;
-                }
-                ctx.SaveChanges();
-                return oldComment;
+                    comment.Text = newComment.Text;
+
+                if ((comment.PostPostId != newComment.PostPostId)
+                    && (newComment.PostPostId != 0))
+                    comment.PostPostId = newComment.PostPostId;
+                context.SaveChanges();
+                return comment;
             }
         }
+
         public Comment GetCommentById(int id)
         {
             using (ModelPostCommentContainer ctx = new ModelPostCommentContainer())
             {
-                var items = from c in ctx.Comments where (c.CommentId == id) select c;
+                var items = ctx.Comments.Where(c => c.CommentId == id);
                 return items.Include(p => p.Post).SingleOrDefault();
             }
         }

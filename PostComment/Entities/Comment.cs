@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PostComment.Entities
 {
-    public sealed class Comment
+    public sealed class EComment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
